@@ -25,15 +25,34 @@ Apresentar os dados
 
 ## Escopo de variáveis
 
-Variaveis globais e locais
-Constantes
+- [X] Variaveis globais e locais
+- [X] Constantes
 
 ## Tipos de dados:
 
-Strings (textos): "" '' ``
-Number: 2, 1.4
-Function
+- [X] Strings (textos): "" '' ``
+- [X] Number: 2, 1.4
+- [X] Boolean: true, false
 
 ## Operadores:
 
-Operadores de atribuição de valores
+- [X] Operadores de atribuição de valores ('=')
+- [X] Operador de concatenação ('+')
+
+## Estrutura de dados
+
+### Arrays:
+
+- [X] Uma lista que contém qualquer tipo de dado
+
+### Objetos:
+
+- [X] Atributos e métodos
+- [X] Criação e manipulação de objetos
+- [X] Acesso a propriedades de 
+
+### Functions:
+
+- [X] Criar, passar argumentos
+- [X] Executar
+- [X] Arrow Function / Named Function
