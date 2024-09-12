@@ -1,7 +1,7 @@
-- Criar metas
-- Listar metas
+[X] Criar metas
+[X] Listar metas
     - Metas realizadas
     - Metas abertas
-- Marcar/Desmarcar metas como concluídas
+[X] Marcar/Desmarcar metas como concluídas
 - Remover metas
 - Sistema de mansagens
