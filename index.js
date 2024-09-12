@@ -1,4 +1,5 @@
 const {select, input, checkbox} = require('@inquirer/prompts')
+const { log } = require('console')
 
 let meta = {
     value: 'Tomar 3L de água por dia',
@@ -75,6 +76,28 @@ const metasAbertas = async () => {
     })
 }
 
+const apagarMetas = async () => {
+    const metasDesmarcadas = metas.map((meta)=> {
+        return {value: meta.value, checked: false}
+    })
+
+    const itemsAApagar = await checkbox({
+        message: "Escolha a(s) meta(s) que deseja apagar:",
+        choices: [...metasDesmarcadas],
+        instructions: false
+    })
+    if(itemsAApagar.length == 0) {
+        console.log("Nenhuma meta para deletar");
+        return        
+    }
+    itemsAApagar.forEach((item) => {
+        metas = metas.filter((meta) => {
+            return meta.value != item
+        })
+    })
+    console.log("Meta(s) apagada(s) com sucesso!");    
+}
+
 const start = async () => {
 
     while(true) {
@@ -99,6 +122,10 @@ const start = async () => {
                     value: "abertas"
                 },
                 {
+                    name: "Apagar Metas",
+                    value: "apagar"
+                },
+                {
                     name: "Sair",
                     value: "sair"
                 }
@@ -117,6 +144,9 @@ const start = async () => {
                 break
             case "abertas":
                 await metasAbertas()
+                break
+            case "apagar":
+                await apagarMetas()
                 break
             case "sair":
                 console.log("Até a próxima")
