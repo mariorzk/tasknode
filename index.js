@@ -12,7 +12,7 @@ const cadastrarMeta = async () => {
     const meta = await input ({message: "Digite a meta:"})
     
     if(meta.length == 0){
-        console.log('A meta não pode ser vazia.');
+       mensagem = 'A meta não pode ser vazia.';
         return        
     }
 
@@ -34,7 +34,7 @@ const listarMetas = async () => {
     })
 
     if(respostas.length == 0) {
-        console.log('Nenhuma meta selecionada');        
+       mensagem = 'Nenhuma meta selecionada';        
         return
     }
 
@@ -53,7 +53,7 @@ const metasRealizadas = async () => {
         return meta.checked
     })
     if(realizadas.length == 0) {
-        console.log('Não existem metas realizadas! :(');
+        mensagem = 'Não existem metas realizadas! :(';
         return        
     }
     await select ({
@@ -67,7 +67,7 @@ const metasAbertas = async () => {
         return meta.checked != true //posso substituir por return !meta.checked
     })
     if(abertas.length == 0) {
-        console.log('Não existem metas em aberto! :)')
+        mensagem = 'Não existem metas em aberto! :)'
         return
     }
     await select ({
@@ -87,7 +87,7 @@ const apagarMetas = async () => {
         instructions: false
     })
     if(itemsAApagar.length == 0) {
-        console.log("Nenhuma meta para deletar");
+        mensagem = 'Nenhuma meta foi apagada!';
         return        
     }
     itemsAApagar.forEach((item) => {
@@ -95,7 +95,7 @@ const apagarMetas = async () => {
             return meta.value != item
         })
     })
-    console.log("Meta(s) apagada(s) com sucesso!");    
+    mensagem = 'Meta(s) apagada(s) com sucesso!';    
 }
 
 const mostrarMensagem = () => {
